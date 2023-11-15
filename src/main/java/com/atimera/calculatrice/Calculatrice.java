@@ -2,8 +2,11 @@ package com.atimera.calculatrice;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 public class Calculatrice {
+    Logger logger = Logger.getLogger("Calculatrice");
+
     public int ajouter(int x, int y) {
         return x+y;
     }
@@ -26,7 +29,7 @@ public class Calculatrice {
                 integerSet.add(Integer.valueOf(n));
             }
         }
-        System.out.println(integerSet);
+        logger.info(integerSet.toString());
         return integerSet;
     }
 }

@@ -9,10 +9,13 @@ import java.text.MessageFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import static org.assertj.core.api.Assertions.*;
 
 class CalculatriceTest {
+
+    static Logger logger = Logger.getLogger("CalculatriceTest");
 
     private Calculatrice calculatriceUnderTest;
 
@@ -20,25 +23,25 @@ class CalculatriceTest {
 
     @BeforeEach
     public void beforeEach() {
-        System.out.println("Initialisation de la classe Calculatrice");
+        logger.info("Initialisation de la classe Calculatrice");
         calculatriceUnderTest = new Calculatrice();
     }
 
     @AfterEach
     public void afterEach(){
-        System.out.println("Désaffectation de la classe pour éviter toute réutilisation");
+        logger.info("Désaffectation de la classe pour éviter toute réutilisation");
         calculatriceUnderTest = null;
     }
 
     @BeforeAll
-    public static void beforeAll(){
+    static void beforeAll(){
         debut = Instant.now();
     }
 
     @AfterAll
-    public static void afterAll(){
+    static void afterAll(){
         long duree = Duration.between(debut, Instant.now()).toMillis();
-        System.out.println(
+        logger.info(
                 MessageFormat.format("Durée des tests = {0} ms",
                 duree));
     }
