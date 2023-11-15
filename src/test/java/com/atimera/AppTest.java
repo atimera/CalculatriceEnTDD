@@ -1,6 +1,7 @@
 package com.atimera;
 
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -8,7 +9,8 @@ import org.junit.jupiter.api.Test;
  */
 class AppTest  {
 
-    //@Test
+    @Test
     void tester(){
+        Assertions.assertThat("").isEmpty();
     }
 }
