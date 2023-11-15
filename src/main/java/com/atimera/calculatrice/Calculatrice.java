@@ -11,17 +11,21 @@ public class Calculatrice {
         return x+y;
     }
     public int soustraire(int x, int y) {
+        logger.info("=== Soustraction ===");
         return x-y;
     }
     public int diviser(int x, int y) {
+        logger.info("=== Division ===");
         return x /y;
     }
 
     public int multiplier(int x, int y) {
+        logger.info("=== Multiplication ===");
         return x*y;
     }
 
     public Set<Integer> digitsSet(int number) {
+        logger.info("=== DigitSet ===");
         String[] strNumer = String.valueOf(number).split("");
         Set<Integer> integerSet = new HashSet<>();
         for(String n : strNumer){
@@ -29,7 +33,6 @@ public class Calculatrice {
                 integerSet.add(Integer.valueOf(n));
             }
         }
-        logger.info(integerSet.toString());
         return integerSet;
     }
 }

@@ -22,13 +22,13 @@ class CalculatriceTest {
     private static Instant debut;
 
     @BeforeEach
-    public void beforeEach() {
+    void beforeEach() {
         logger.info("Initialisation de la classe Calculatrice");
         calculatriceUnderTest = new Calculatrice();
     }
 
     @AfterEach
-    public void afterEach(){
+    void afterEach(){
         logger.info("Désaffectation de la classe pour éviter toute réutilisation");
         calculatriceUnderTest = null;
     }
@@ -49,7 +49,7 @@ class CalculatriceTest {
 
     @ParameterizedTest(name = "{0} + {1} doit être égal à {2}")
     @CsvSource({"50,3,53", "12,5,17", "62,8,70", "-8,8,0", "4,-9,-5"})
-    public void ajouter_shouldAddTwoIntegerNumbers(int arg1, int arg2, int expectedResult){
+    void ajouter_shouldAddTwoIntegerNumbers(int arg1, int arg2, int expectedResult){
         // Arrange
         // Act
         int resulat = calculatriceUnderTest.ajouter(arg1, arg2);
@@ -60,7 +60,7 @@ class CalculatriceTest {
     }
 
     @Test
-    public void ajouter_shouldMultiplyTwoIntegerNumbers(){
+    void ajouter_shouldMultiplyTwoIntegerNumbers(){
         // Arrange
         int a=2, b=8;
 
@@ -73,7 +73,7 @@ class CalculatriceTest {
 
     @ParameterizedTest(name = "{0} x 0 doit être égal à 0")
     @ValueSource(ints = {0, 4, -5, 130})
-    public void multiplier_shouldReturnZero_WhenMultiplierParZero(int arg){
+    void multiplier_shouldReturnZero_WhenMultiplierParZero(int arg){
         // Arrange
         // Act
         int resultat = calculatriceUnderTest.multiplier(arg, 0);
@@ -83,7 +83,7 @@ class CalculatriceTest {
     }
 
     @Test
-    public void digitsSet_shouldReturnsTheSetOfDigits_ofPositiveInteger() {
+    void digitsSet_shouldReturnsTheSetOfDigits_ofPositiveInteger() {
         // GIVEN
         int number = -9581497;
 
